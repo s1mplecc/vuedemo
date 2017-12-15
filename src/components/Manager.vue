@@ -10,9 +10,9 @@
         <th>姓名</th>
         <th>操作</th>
       </tr>
-      <tr v-for="item in peoples">
+      <tr v-for="(item,index) in peoples">
         <td>{{item.name}}</td>
-        <td><span>编辑</span> <span>删除</span></td>
+        <td v-bind:id="index"><span v-on:click="del">删除</span></td>
       </tr>
     </table>
   </div>
@@ -36,6 +36,9 @@
         if (this.nameValue.trim() !== '') {
           this.peoples.push({'name': this.nameValue})
         }
+      },
+      del(e){
+        this.peoples.splice(e.target.offsetParent.id,1)
       }
     }
   }
@@ -46,5 +49,9 @@
     font-weight: normal;
     color: #42b983;
     background: lightblue;
+  }
+
+  span {
+    color: aqua;
   }
 </style>
