@@ -13,12 +13,10 @@
       </tr>
     </table>
 
-    <div class="wrap">
-      <form class="input-area" v-show="showAdd">
-        <input type="text" placeholder="请输入人员姓名" required="required" v-model="nameValue"/>
-        <button type="submit" v-on:click="addName">确定</button>
-      </form>
-    </div>
+    <form class="add-name" v-show="showAdd">
+      <input type="text" placeholder="请输入人员姓名" required="required" v-model="nameValue"/>
+      <button type="submit" v-on:click="addName">确定</button>
+    </form>
   </div>
 </template>
 
@@ -40,7 +38,7 @@
         if (this.nameValue.trim() !== '') {
           this.peoples.push({'name': this.nameValue})
           this.showAdd = false
-          this.nameValue=undefined
+          this.nameValue = undefined
         }
       },
       del(e) {
@@ -65,13 +63,19 @@
     text-decoration: none;
     font: 14px/100% Arial, Helvetica, sans-serif;
     padding: .4em 2em .55em;
-    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
     -webkit-border-radius: .5em;
     -moz-border-radius: .5em;
     border-radius: .5em;
-    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+  }
+
+  input {
+    width: 130px;
+    height: 20px;
+    font-size: 15px;
   }
 
   span {
