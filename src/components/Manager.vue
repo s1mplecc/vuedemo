@@ -33,7 +33,9 @@
         this.showAdd = true
       },
       addName() {
-        this.peoples.push({'name': this.nameValue})
+        if (this.nameValue.trim() !== '') {
+          this.peoples.push({'name': this.nameValue})
+        }
       }
     }
   }
