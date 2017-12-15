@@ -26,6 +26,7 @@
     data() {
       return {
         showAdd: false,
+        nameValue: undefined,
         peoples:
           [{'name': '王红'}, {'name': '李明'}]
       }

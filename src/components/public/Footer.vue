@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <div class="footer-nav">
     <ul>
       <li><router-link to="/">首页</router-link></li>
       <li><router-link to="/manager">人员管理</router-link></li>
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'Footer',
+  name: 'footer-nav',
 }
 </script>
 
