@@ -1,6 +1,6 @@
 # vuedemo
 
-> A Vue-based person manager project
+> A vue-based Person-Manager-System project
 
 ## Build Setup
 
