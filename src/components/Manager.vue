@@ -15,7 +15,7 @@
 
     <form class="add-name" v-show="showAdd">
       <input type="text" placeholder="请输入人员姓名" required="required" v-model="nameValue"/>
-      <button type="submit" v-on:click="addName">确定</button>
+      <button type="button" v-on:click="addName">确定</button>
     </form>
   </div>
 </template>
@@ -28,7 +28,7 @@
         showAdd: false,
         nameValue: undefined,
         peoples:
-          [{'name': '王红'}, {'name': '李明'}]
+          [{name: '王红'}, {name: '李明'}]
       }
     },
     methods: {
@@ -37,7 +37,8 @@
       },
       addName() {
         if (this.nameValue.trim() !== '') {
-          this.peoples.push({'name': this.nameValue})
+          console.log(this.nameValue)
+          this.peoples.push({name: this.nameValue})
           this.showAdd = false
           this.nameValue = undefined
         }
