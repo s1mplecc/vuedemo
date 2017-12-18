@@ -4,11 +4,11 @@
 
     <table WIDTH=200 CellSpacing=8>
       <tr>
-        <th>姓名</th>
+        <th v-for="column in columns">{{ column.title }}</th>
         <th>操作</th>
       </tr>
       <tr v-for="(item,index) in peoples">
-        <td>{{item.name}}</td>
+        <td v-for="column in columns">{{ item[column.attr] }}</td>
         <td v-bind:id="index"><span v-on:click="del">删除</span></td>
       </tr>
     </table>
@@ -27,8 +27,15 @@
       return {
         showAdd: false,
         nameValue: undefined,
-        peoples:
-          [{name: '王红'}, {name: '李明'}]
+        columns: [
+          {title: 'XM', attr: 'name'},
+          {title: 'NL', attr: 'age'},
+          {title: 'CJ', attr: 'grade'}
+        ],
+        peoples: [
+          {name: '王红', age: 10, grade: 99},
+          {name: '李明', age: 12, grade: 88}
+        ]
       }
     },
     methods: {
